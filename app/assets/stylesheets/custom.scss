@@ -85,3 +85,29 @@ input, textarea, select, .uneditable-input {
   width: 100%;
   margin-bottom: 15px;
 }
+
+.entries {
+  list-style: none;
+  padding: 0;
+  li {
+    border-top: 1px solid #e8e8e8;
+    padding: 10px 0;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+    font-size: 1.5em;
+  }
+  .content {
+    display: block;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: #777;
+    display: block;
+    margin-left: 60px;
+  }
+}
