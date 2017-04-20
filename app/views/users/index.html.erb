@@ -1,0 +1,11 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".title" %></h1>
+
+<% @users.each do |user| %>
+<ul class="users">
+  <li>
+    <%= link_to user.name, user %>
+    <%= link_to user.email, user %>
+  </li>
+</ul>
+<% end %>

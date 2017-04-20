@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420042111) do
+ActiveRecord::Schema.define(version: 20170420091206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "entry_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["entry_id", "created_at"], name: "index_comments_on_entry_id_and_created_at", using: :btree
+    t.index ["entry_id"], name: "index_comments_on_entry_id", using: :btree
+  end
 
   create_table "entries", force: :cascade do |t|
     t.string   "title"
@@ -27,6 +37,16 @@ ActiveRecord::Schema.define(version: 20170420042111) do
     t.index ["user_id"], name: "index_entries_on_user_id", using: :btree
   end
 
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
+    t.index ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -37,5 +57,8 @@ ActiveRecord::Schema.define(version: 20170420042111) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
+  add_foreign_key "comments", "entries"
+  add_foreign_key "comments", "users"
+  add_foreign_key "comments", "users", name: "comments_user_id_fkey"
   add_foreign_key "entries", "users"
 end

@@ -14,6 +14,11 @@ en:
       error: "errors"
     create:
       account_actived: "Account activated"
+    index:
+      title: "All users"
+    follow:
+      follow: "Follow"
+      unfollow: "Unfollow"
   sessions:
     new:
       title: "Log in"
@@ -38,9 +43,16 @@ en:
       cannot_delete: "You cannot delete this entry!"
     entries:
       confirm_delete: "You sure?"
+      enter_comment: "Enter..."
+      create: "Create"
     destroy:
       entry_deleted: "Entry was deleted!"
       delete_failed:  "Delete failed"
   shared:
     form_contains: "The form contains "
     error: "errors"
+  follows:
+    follow:
+      follow: "Follow"
+    unfollow:
+      unfollow: "Unfollow"
