@@ -4,15 +4,23 @@ class EntriesController < ApplicationController
 
   def new
     @entry = Entry.new
+    if session[:errors] && session[:errors] == 0
+      session[:errors] = nil
+    else
+      session[:errors] = 1
+    end
   end
 
   def create
     @entry = current_user.entries.build entry_params
     if @entry.save
       flash[:success] = t ".entry_created"
+      session[:create_errors] = Hash.new
       redirect_to root_url
     else
-      render :new
+      session[:create_errors] = @entry.errors.full_messages
+      session[:errors] = 0
+      redirect_to new_entry_url
     end
   end
 
@@ -27,7 +35,7 @@ class EntriesController < ApplicationController
 
   private
   def entry_params
-    params.require(:entry).permit :title, :description, :content, :picture
+    params.require(:entry).permit :title, :content, :picture
   end
 
   def logged_in_user

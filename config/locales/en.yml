@@ -3,9 +3,16 @@ en:
     footer:
       blog_app: "Blog"
       home: "Home"
+    header:
+      new_entry: "New entry"
   home:
     index:
       title: "Home"
+    client:
+      confirm_delete: "You sure?"
+      enter_comment: "Enter..."
+      create: "Create"
+      comment: "Comment"
   users:
     new:
       btn_signup: "Create account"
@@ -16,9 +23,13 @@ en:
       account_actived: "Account activated"
     index:
       title: "All users"
+      log_in: "Please log in."
     follow:
       follow: "Follow"
+    unfollow:
       unfollow: "Unfollow"
+    show:
+      log_in: "Please log in."
   sessions:
     new:
       title: "Log in"
@@ -37,6 +48,8 @@ en:
       create: "Create"
       create_entry: "Create entry"
       log_in: "Log in to create entry"
+      form_contains: "The form contains "
+      error: "errors"
     create:
       entry_created: "Created successfully!"
     owner?:
@@ -45,14 +58,24 @@ en:
       confirm_delete: "You sure?"
       enter_comment: "Enter..."
       create: "Create"
+      comment: "Comment"
     destroy:
       entry_deleted: "Entry was deleted!"
       delete_failed:  "Delete failed"
   shared:
-    form_contains: "The form contains "
-    error: "errors"
+    error_messages:
+      form_contains: "The form contains "
+      error: "errors"
   follows:
     follow:
       follow: "Follow"
     unfollow:
       unfollow: "Unfollow"
+    followers:
+      follower: "Follower"
+    following:
+      following: "Following"
+  comments:
+    create:
+      commented: "Comment successfully"
+      comment_failed: "Comment failed"

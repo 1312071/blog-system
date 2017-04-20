@@ -23,6 +23,13 @@ class User < ApplicationRecord
   validates :password, length: {minimum: Settings.min_password_leng},
     if: -> {self.new_record?}
 
+  def feed
+    following_ids = "SELECT followed_id FROM relationships
+      WHERE  follower_id = :user_id"
+    Entry.where "user_id IN (#{following_ids})
+      OR user_id = :user_id", user_id: id
+  end
+
   def forget
     update_attribute :remember_digest, nil
   end

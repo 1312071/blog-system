@@ -23,6 +23,7 @@ gem "mini_magick"
 gem "fog"
 gem "will_paginate"
 gem "bootstrap-will_paginate"
+gem "faker", "1.6.6"
 
 group :development, :test do
   gem "byebug", platform: :mri
