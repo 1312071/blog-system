@@ -19,6 +19,28 @@ en:
       title: "Log in"
       remember_me: "Remember me"
       create_account: "Create my account: "
+      log_in: "Log in to create entry"
     create:
       login_success: "Successfull login!"
       invalid: "Email/password invalid"
+  entries:
+    new:
+      title: "New Entry"
+      enter_title: "Enter your title..."
+      enter_desc: "Enter your description..."
+      enter_content: "Enter your content..."
+      create: "Create"
+      create_entry: "Create entry"
+      log_in: "Log in to create entry"
+    create:
+      entry_created: "Created successfully!"
+    owner?:
+      cannot_delete: "You cannot delete this entry!"
+    entries:
+      confirm_delete: "You sure?"
+    destroy:
+      entry_deleted: "Entry was deleted!"
+      delete_failed:  "Delete failed"
+  shared:
+    form_contains: "The form contains "
+    error: "errors"

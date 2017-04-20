@@ -1,3 +1,10 @@
 max_name_leng: 50
 max_email_leng: 255
 min_password_leng: 6
+max_title_leng: 150
+min_desc_leng: 20
+max_desc_leng: 255
+picture_size: 3
+width: 400
+height: 400
+per_page: 15
