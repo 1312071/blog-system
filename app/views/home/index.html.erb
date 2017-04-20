@@ -1,4 +1,8 @@
 <% provide :title, t(".title") %>
 <div class="center jumbotron">
-  <%= render "entries/entries" %>
+  <% if logged_in? %>
+    <%= render "client" %>
+  <% else %>
+    <%= render "entries/entries" %>
+  <% end %>
 </div>

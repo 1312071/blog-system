@@ -7,9 +7,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   resources :users
   resources :entries
-  namespace :entries do
-    resources :comments
-  end
+  resources :comments
   resources :follows do
     member do
       get :following, :followers

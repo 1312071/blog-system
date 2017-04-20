@@ -108,7 +108,8 @@ input, textarea, select, .uneditable-input {
   .timestamp {
     color: #777;
     display: block;
-    margin-left: 60px;
+    margin-left: 10px;
+    font-size: 1em;
   }
 }
 
@@ -120,4 +121,76 @@ input, textarea, select, .uneditable-input {
     overflow: auto;
     padding: 10px 0;
   }
+}
+
+aside {
+  section.user-info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+      .micropost{
+        font-weight: bold;
+      }
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    float: left;
+    padding: 0 10px;
+    &:first-child {
+      border: 0;
+      padding-left: 0;
+    }
+    &:hover {
+      color: blue;
+      text-decoration: none;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  margin-top: 10px;
+  overflow: auto;
+  .gravatar {
+    margin: 1px 1px;
+  }
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
 }

@@ -3,11 +3,20 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <%= form_for @entry do |f| %>
-      <%= render "shared/error_messages", object: f.object %>
+      <% if session[:errors].nil? && session[:create_errors].any? %>
+        <div id="error-explanation">
+          <div class="alert alert-danger">
+            <%= t ".form_contains" %><%= pluralize session[:create_errors].count, t(".error") %>
+          </div>
+          <ul>
+            <% session[:create_errors].each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
       <div class="field">
         <%= f.text_field :title, placeholder: t(".enter_title"),
-          class: "form-control" %>
-        <%= f.text_field :description, placeholder: t(".enter_desc"),
           class: "form-control" %>
         <%= f.text_area :content, placeholder: t(".enter_content"),
           class: "form-control" %>

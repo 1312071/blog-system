@@ -5,9 +5,9 @@ class Entry < ApplicationRecord
   validates :title, presence: true, length: {maximum: Settings.max_title_leng}
   validates :user_id, presence: true
   validates :content, presence: true
-  validates :description, presence: true,
-    length: {minimum: Settings.min_desc_leng, maximum: Settings.max_desc_leng}
   validate  :picture_size
+
+  default_scope ->{order created_at: :desc}
 
   mount_uploader :picture, PictureUploader
 

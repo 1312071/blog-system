@@ -5,8 +5,8 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new
     @comment.user_id = current_user.id
-    @comment.entry_id = param[:entry][:id]
-    @comment.content = params[:content]
+    @comment.content = params[:comment][:content]
+    @comment.entry_id = params[:comment][:id]
     if @comment.save
       flash[:success] = t ".commented"
     else
