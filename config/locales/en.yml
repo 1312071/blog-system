@@ -14,3 +14,11 @@ en:
       error: "errors"
     create:
       account_actived: "Account activated"
+  sessions:
+    new:
+      title: "Log in"
+      remember_me: "Remember me"
+      create_account: "Create my account: "
+    create:
+      login_success: "Successfull login!"
+      invalid: "Email/password invalid"
