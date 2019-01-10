@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20170420154245) do
     t.integer  "entry_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
     t.index ["entry_id", "created_at"], name: "index_comments_on_entry_id_and_created_at", using: :btree
     t.index ["entry_id"], name: "index_comments_on_entry_id", using: :btree
   end
@@ -57,7 +56,5 @@ ActiveRecord::Schema.define(version: 20170420154245) do
   end
 
   add_foreign_key "comments", "entries"
-  add_foreign_key "comments", "users"
-  add_foreign_key "comments", "users", name: "comments_user_id_fkey"
   add_foreign_key "entries", "users"
 end

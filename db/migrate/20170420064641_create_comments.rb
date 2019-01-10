@@ -2,7 +2,7 @@ class CreateComments < ActiveRecord::Migration[5.0]
   def change
     create_table :comments do |t|
       t.string :content
-      t.references :entry, foreign_key: true
+      t.integer :entry_id
       t.timestamps
     end
     add_index :comments, [:entry_id, :created_at]

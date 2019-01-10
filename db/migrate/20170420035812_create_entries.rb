@@ -4,7 +4,7 @@ class CreateEntries < ActiveRecord::Migration[5.0]
       t.string :title
       t.text :content
       t.text :description
-      t.references :user, foreign_key: true
+      t.integer :user_id
       t.timestamps
     end
     add_index :entries, [:user_id, :created_at]
